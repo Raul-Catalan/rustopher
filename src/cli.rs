@@ -10,13 +10,13 @@ pub struct Cli {
     pub command: Commands,
 }
 
+// Subcommands Test
 #[derive(Subcommand)]
 pub enum Commands {
     Init,
-    Startup,
-    Shutdown,
     ClockIn,
     ClockOut,
     Tasks {},
+    Test,
     Review,
 }

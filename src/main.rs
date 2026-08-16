@@ -1,5 +1,6 @@
 mod cli;
 mod commands;
+mod storage;
 
 use clap::Parser;
 use cli::{Cli, Commands};
@@ -9,8 +10,8 @@ fn main() {
     let cli = Cli::parse();
 
     match cli.command {
-        Commands::Startup => {
-            commands::startup::execute();
+        Commands::ClockIn => {
+            commands::clockin::execute();
         }
         _ => {
             println!("Command not implemented");
