@@ -1,6 +1,6 @@
 mod cli;
 mod commands;
-mod storage;
+pub mod storage;
 
 use clap::Parser;
 use cli::{Cli, Commands};
@@ -12,6 +12,8 @@ fn main() {
     // Create database connection
     let db_path = "~/app.db";
     let conn = crate::storage::db::init_db(&db_path);
+
+    conn.execute("insert into time ()")
 
     match cli.command {
         Commands::ClockIn => {
